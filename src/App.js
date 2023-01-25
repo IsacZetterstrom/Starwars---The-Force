@@ -9,6 +9,7 @@ import InfoPage from './components/InfoPage';
 function App() {
   return (
     <div className="App">
+      <FetchAPI data ="https://swapi.dev/api/people/" />
     <BrowserRouter>
       <Routes>
           <Route index element={<LandingPage />} />

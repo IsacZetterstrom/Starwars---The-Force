@@ -3,21 +3,29 @@ import '../styles/Home.css';
 // export default FetchAPI = props => {
 //     FetchAPI(props);
 // }
-export default function FetchAPI(url) {
-    const [ data, setData ] = useState([]);
-    url = "https://swapi.dev/api/people/"
+export default function FetchAPI(data) {
+    const [ people, setPeople ] = useState([]);
+    const [ planets, setPlanets] = useState([]);
+    const [ films, setfilms ] = useState([]);
+    const [species, setSpecies] = useState([]);
+    const [starships, setStarships] = useState([])
+    // fetch = "https://swapi.dev/api/people/"
+    console.log(data)
     useEffect(() => {
-        fetch(`${url}`)
+        fetch(data.data)
         .then(Response => Response.json())
-        .then(tempData => setData(tempData.results));
+        .then(tempData => setPeople(tempData.results));
         // LoadData();   
     }, []);
-    console.log(data.map(temp => (temp)))
+    console.log(people.map(temp => (temp)))
     return (
-        
-        <div className="FetchContainer">
-            {data.map(temp => (<button onClick={temp.url} className="bajs" key={temp.name}>{temp.name}</button>))}
+        <div>
+            {data.url};
         </div>
+        
+        // <div className="FetchContainer">
+        //     {people.map(temp => (<button onClick={temp.url} className="bajs" key={temp.name}>{temp.name}</button>))}
+        // </div>
     )
     // const LoadData = async () => {
     //     await fetch(`${url}`)
