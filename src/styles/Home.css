@@ -8,12 +8,15 @@ body,html{
     display: flex;
     
 }
-
+.whiteText{
+    color:black;
+}
 .headerImg{
     width: 100vw;
     background-size: cover;
-    position: absolute;
     z-index: 5;
+    position: relative;
+
 }
 
 .headerText{
@@ -21,15 +24,15 @@ body,html{
     color: rgb(131, 30, 50);
     font-size: 2rem;
     font-family: 'Poller One', cursive;
-    margin-top: 190px;
     text-align: center;
-
+    text-shadow: 0 -.1em 15px rgb(131, 30, 50);
+    top: 5.5em;
+    position: absolute;
 }
 
 .testmall {
     display: flex;
     flex-direction: column;
-    cursor: pointer;
     overflow: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -39,10 +42,34 @@ body,html{
     display: none;
 }
 
-.menu {
+.btn-home {
+    padding: .5em 1em;
+    background-color: rgb(43, 43, 43);
+    box-shadow: 1px 1px 2px rgb(122, 44, 44);
+    color: rgb(202, 209, 209);
+    border-style: none;
+    margin: .2em;
+    border-radius: .5em;
+    width: 8em;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: .070em;
+    font-weight: 600;
+}
+
+.btn-list {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 1.5em;
+    border-bottom: 2px solid rgb(131, 30, 50);
+}
+
+
+
+.menu,.btn-list {
     display: flex;
-    flex-direction: column;
     margin: 1em auto;
+    width: 80%;
 }
 
 .menu li {
@@ -55,6 +82,7 @@ body,html{
     border-radius: 1em;
     letter-spacing: .2em;
     font-family: 'Poller One', cursive;
+    
 }
 
 .menu li a {
@@ -74,4 +102,25 @@ body,html{
     margin: 0 auto;
     width: 60%;
     overflow: scroll;
+}
+.sub-categories-list{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding-bottom: 1em;
+    
+}
+.sub-categories-list::-webkit-scrollbar {
+    display: none;
+}
+
+.sub-category-btn{
+    margin-bottom: .3em;
+    height: 3em;
+    border-radius: .7em;
+    
 }
