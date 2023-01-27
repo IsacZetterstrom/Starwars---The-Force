@@ -12,41 +12,41 @@ export default function InfoPage({data}){
         for (let i = 0; i < data.length; i++) {
             
             keyCounter ++;
-            tempHtml.push(<button key={data.name + keyCounter} className='sub-category-btn'>{data[i].name}</button>)
+            tempHtml.push(<button key={keyCounter} className='sub-category-btn'>{data[i].name}</button>)
         } 
     }else if(data[0]?.url?.includes("planets")){
 
         for (let i = 0; i < data.length; i++) {
             keyCounter ++;
-            tempHtml.push(<button key={data.name + keyCounter} className='sub-category-btn'>{data[i].name}</button>)
+            tempHtml.push(<button key={keyCounter} className='sub-category-btn'>{data[i].name}</button>)
         }
 
     }else if(data[0]?.url?.includes("films")){
 
         for (let i = 0; i < data.length; i++) {
             keyCounter ++;
-            tempHtml.push(<button key={data.title + keyCounter} className='sub-category-btn'>{data[i].title}</button>)
+            tempHtml.push(<button key={keyCounter} className='sub-category-btn'>{data[i].title}</button>)
         }
 
     }else if(data[0]?.url?.includes("species")){
 
         for (let i = 0; i < data.length; i++) {
             keyCounter ++;
-            tempHtml.push(<button key={data.name + keyCounter} className='sub-category-btn'>{data[i].name}</button>)
+            tempHtml.push(<button key={keyCounter} className='sub-category-btn'>{data[i].name}</button>)
         }
 
     }else if(data[0]?.url?.includes("vehicles")){
 
         for (let i = 0; i < data.length; i++) {
             keyCounter ++;
-            tempHtml.push(<button key={data.category + keyCounter} className='sub-category-btn'>{data[i].name}</button>)
+            tempHtml.push(<button key={keyCounter} className='sub-category-btn'>{data[i].name}</button>)
         }
 
     }else if(data[0]?.url?.includes("starships")){
 
         for (let i = 0; i < data.length; i++) {
             keyCounter ++;
-            tempHtml.push(<button key={data.category + keyCounter} className='sub-category-btn'>{data[i].name}</button>)
+            tempHtml.push(<button key={keyCounter} className='sub-category-btn'>{data[i].name}</button>)
         }
         
     }
