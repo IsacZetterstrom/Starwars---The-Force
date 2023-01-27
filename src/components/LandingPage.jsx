@@ -3,32 +3,27 @@ import React, { useState, useEffect } from "react";
 import '../styles/Home.css';
 import { Link } from 'react-router-dom';
 import InfoPage from "./InfoPage";
+import { useNavigate } from "react-router-dom";
+
 
 export default function LandingPage() {
+    
     const [ ApiBank, setApiBank ] = useState([]);
-    useEffect(() => {
-        // fetchAPI();
-    }, []);
 
-    const fetchAPI = async (data) =>  {
-         
-        if(ApiBank.next != null){
-            console.log(ApiBank.next)
-            // console.log(ApiBank.results[0].url)   
+    const fetchAPI = async (categories, totalPages) =>  {
+        let promises = []
+        let currentPage = 1;
+        for (let i = 1; i <= totalPages; i++) {
+            promises.push(fetch(`https://swapi.dev/api/${categories}/?page=${currentPage}`)
+            .then(response => response.json())) //kolla mer på promise / promise all
+            // .then(recievedData => setApiBank(recievedData))
+            currentPage++;
         }
-        await fetch(data)
-        .then(response => response.json())
-        .then(recievedData => setApiBank(recievedData),);
-        
-
-        // console.log(ApiBank)
-        // if (pageNr < 10) {
-        //     console.log(page);
-        //     setPage(page + 1);
-        // }
+        let result = await Promise.all(promises); //jag Isac är som en "gud"
+        let results = result.map(data => data.results)
+        setApiBank([].concat(...results));
 
     }
-
     return (
         <>
         <div className="testmall">
@@ -37,18 +32,15 @@ export default function LandingPage() {
                 <h1 className="headerText">Epic Star Wars Wikipedia</h1>
              </div>
 
-             
-             
              <div className="btn-list">
-                <button onClick={() => fetchAPI(`https://swapi.dev/api/people/?page=1`)} className="btn-home">PEOPLE</button>
-                <button onClick={() => fetchAPI("https://swapi.dev/api/planets/?page=1")} className="btn-home">PLANETS</button>
-                <button onClick={() => fetchAPI("https://swapi.dev/api/films/?page=1")} className="btn-home">FILMS</button>
-                <button onClick={() => fetchAPI("https://swapi.dev/api/species/?page=1")} className="btn-home">SPECIES</button>
-                <button onClick={() => fetchAPI("https://swapi.dev/api/vehicles/?page=1")} className="btn-home">VEHICLES</button>
-                <button onClick={() => fetchAPI("https://swapi.dev/api/starships/?page=1")} className="btn-home">STARSHIPS</button>
+                <button onClick={() => fetchAPI("people", 9)} className="btn-home">PEOPLE</button>
+                <button onClick={() => fetchAPI("planets", 6)} className="btn-home">PLANETS</button>
+                <button onClick={() => fetchAPI("films", 1)} className="btn-home">FILMS</button>
+                <button onClick={() => fetchAPI("species", 4)} className="btn-home">SPECIES</button>
+                <button onClick={() => fetchAPI("vehicles", 4)} className="btn-home">VEHICLES</button>
+                <button onClick={() => fetchAPI("starships", 4)} className="btn-home">STARSHIPS</button>
             </div>
         </div>
-
         {ApiBank && <InfoPage data={ApiBank}/>}
         </>
     )
