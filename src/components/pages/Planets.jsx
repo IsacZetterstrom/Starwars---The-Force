@@ -2,6 +2,9 @@ import React from "react";
 
 export default function Planets() { 
     return (
-        <h1>Planets</h1>
+        <div>
+            <h2 className="whiteText">Planets</h2>
+        </div>
+        
     )
 }
