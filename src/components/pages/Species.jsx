@@ -2,6 +2,8 @@ import React from "react";
 
 export default function Species() { 
     return (
-        <h1>Species</h1>
+        <div>
+            <h2 className="whiteText">Species</h2>
+        </div>
     )
 }

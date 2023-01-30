@@ -3,18 +3,14 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import '../../styles/Home.css';
 import SubCategory from '../SubCategory'
+import LandingPage from "../LandingPage";
 
-export default function People({data}) { 
-    let peopleStructure =[];
 
-    peopleStructure.push (<h2>HEEY</h2>)
-    console.log(peopleStructure)
-console.log({data})
+export default function People() {
     return (
         <div>
-            {peopleStructure}
-        {/* {peopleStructure && <SubCategory data={peopleStructure}/>} */}
-        {/* <Link to="/People"><button onClick={() => fetchAPI("people", 9)} className="btn-home">PEOPLE</button></Link> */}
+            <h2 className="whiteText">People</h2>
+            <button>tillbaka</button>
         </div>
     )
 }

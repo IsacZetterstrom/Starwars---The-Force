@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import '../styles/Home.css';
 import SubCategory from "./SubCategory";
-import { Link, Outlet } from "react-router-dom";
+// import { Link, Outlet } from "react-router-dom";
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 // import Home from '../components/pages/Home';
 
 
@@ -32,7 +33,7 @@ export default function LandingPage() {
                 <h1 className="headerText">Epic Star Wars Wikipedia</h1>
              </div>
              <div className="btn-list">
-                <Link to="/People"><button onClick={() => fetchAPI("people", 9)} className="btn-home">People</button></Link>
+                <Link to="/People"><button onClick={() => fetchAPI("people", 9)} className="btn-home">PEOPLE</button></Link>
                 <Link to="/Planets"><button onClick={() => fetchAPI("planets", 6)} className="btn-home">PLANETS</button></Link>
                 <Link to="/Films"><button onClick={() => fetchAPI("films", 1)} className="btn-home">FILMS</button></Link>
                 <Link to="/Species"><button onClick={() => fetchAPI("species", 4)} className="btn-home">SPECIES</button></Link>

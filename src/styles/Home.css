@@ -61,10 +61,12 @@ body,html{
     transition: all .3s;
 }
 
+
 .btn-home:hover {
     /* border: 1px solid rgb(144, 45, 45); */
     border: 1px solid rgb(118, 150, 137);
 }
+
 
 .btn-list {
     justify-content: center;
