@@ -24,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
     <div clame="App">
-    
+    {/* <LandingPage /> */}
       <Routes>
           <Route path ="/" element={<LandingPage />}>
           <Route exact path="/People" element={<People />} />

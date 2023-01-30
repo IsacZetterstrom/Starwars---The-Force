@@ -5,12 +5,15 @@ import '../../styles/Home.css';
 import SubCategory from '../SubCategory'
 
 export default function People({data}) { 
-    // peopleStructure =[];
+    let peopleStructure =[];
+
+    peopleStructure.push (<h2>HEEY</h2>)
+    console.log(peopleStructure)
 console.log({data})
     return (
         <div>
-            
-        <h2 className="whiteText">People</h2>
+            {peopleStructure}
+        {/* {peopleStructure && <SubCategory data={peopleStructure}/>} */}
         {/* <Link to="/People"><button onClick={() => fetchAPI("people", 9)} className="btn-home">PEOPLE</button></Link> */}
         </div>
     )
