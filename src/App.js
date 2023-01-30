@@ -1,26 +1,38 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
 import './App.css';
+
+//components----------------------------------
 import LandingPage from './components/LandingPage';
-// import FetchAPI from './components/ApiFetch';
-import InfoPage from './components/InfoPage';
+import SubCategory from './components/SubCategory';
+
+// pages--------------------------------------
+import Films from './components/pages/Films';
+import Home from './components/pages/Home';
+import People from './components/pages/People';
+import Vehicles from './components/pages/Vehicles';
+import Species from './components/pages/Species';
+import Planets from './components/pages/Planets';
+
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
   return (
-    <Router>
-    <div className="App">
-      <Routes>
-          <Route exact path="/" index element={<LandingPage />} />
-          <Route exact path="/InfoPage" element={<InfoPage />} />
-      </Routes>
+    <BrowserRouter>
+    <div clame="App">
     
+      <Routes>
+          <Route path ="/" element={<LandingPage />}>
+          <Route exact path="/People" element={<People />} />
+          <Route exact path="/Vehicles" element={<Vehicles />} />
+          <Route exact path="/Planets" element={<Planets />} />
+          </Route>
+      </Routes>
     </div>
-    </Router>
+    </BrowserRouter>
+
   );
 }
 

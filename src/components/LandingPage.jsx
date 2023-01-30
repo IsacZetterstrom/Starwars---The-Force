@@ -1,9 +1,10 @@
 // import ApiFetch from "./components/ApiFetch";
 import React, { useState, useEffect } from "react";
 import '../styles/Home.css';
-import { Link } from 'react-router-dom';
-import InfoPage from "./InfoPage";
-import { useNavigate } from "react-router-dom";
+import SubCategory from "./SubCategory";
+import { Link, Outlet } from "react-router-dom";
+import Home from '../components/pages/Home';
+
 
 
 export default function LandingPage() {
@@ -31,17 +32,16 @@ export default function LandingPage() {
                 <img className="headerImg" src="./assets/img/starwars.jpg" alt="starWars"></img>
                 <h1 className="headerText">Epic Star Wars Wikipedia</h1>
              </div>
-
              <div className="btn-list">
-                <button onClick={() => fetchAPI("people", 9)} className="btn-home">PEOPLE</button>
-                <button onClick={() => fetchAPI("planets", 6)} className="btn-home">PLANETS</button>
-                <button onClick={() => fetchAPI("films", 1)} className="btn-home">FILMS</button>
-                <button onClick={() => fetchAPI("species", 4)} className="btn-home">SPECIES</button>
-                <button onClick={() => fetchAPI("vehicles", 4)} className="btn-home">VEHICLES</button>
-                <button onClick={() => fetchAPI("starships", 4)} className="btn-home">STARSHIPS</button>
+                <Link to="/People"><button onClick={() => fetchAPI("people", 9)} className="btn-home">PEOPLE</button></Link>
+                <Link to="/Planets"><button onClick={() => fetchAPI("planets", 6)} className="btn-home">PLANETS</button></Link>
+                <Link to="/Films"><button onClick={() => fetchAPI("films", 1)} className="btn-home">FILMS</button></Link>
+                <Link to="/Species"><button onClick={() => fetchAPI("species", 4)} className="btn-home">SPECIES</button></Link>
+                <Link to="/Vehicles"><button onClick={() => fetchAPI("vehicles", 4)} className="btn-home">VEHICLES</button></Link>
+                <Link to="/Starships"><button onClick={() => fetchAPI("starships", 4)} className="btn-home">STARSHIPS</button></Link>
             </div>
         </div>
-        {ApiBank && <InfoPage data={ApiBank}/>}
+        {ApiBank && <SubCategory data={ApiBank}/>}
         </>
     )
 }

@@ -2,9 +2,9 @@
 import '../styles/Home.css';
 import React from "react";
 import { fireEvent } from '@testing-library/react';
-// import fetchAPI from "./LandingPage"
+import People from "../components/pages/People";
 let keyCounter = 0;
-export default function InfoPage({data}){
+export default function SubCategory({data}){
     let tempHtml = [];
     console.log(data)
 
@@ -54,6 +54,7 @@ export default function InfoPage({data}){
     return(
         
         <div className='sub-categories-list'>
+            {People && <People data={People}/>}
             {tempHtml}
             {/* {ApiList && ApiList?.results?.map(result => (
                 <div className='whiteText'>

@@ -9,7 +9,9 @@ body,html{
     
 }
 .whiteText{
-    color:black;
+    color:rgb(252, 252, 252);
+    padding-bottom: 1em;
+    text-align: center;
 }
 .headerImg{
     width: 100vw;
