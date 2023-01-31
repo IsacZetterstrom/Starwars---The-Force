@@ -23,7 +23,6 @@ export default function LandingPage() {
         let result = await Promise.all(promises); //jag Isac är som en "gud"
         let results = result.map(data => data.results)
         setApiBank([].concat(...results));
-
     }
     return (
         <>
